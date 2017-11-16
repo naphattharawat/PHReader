@@ -1,14 +1,28 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar color="primary">
+    <!-- <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <ion-title>NMPCD</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="scan()">
+        <ion-icon name="md-barcode"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-searchbar (ionInput)="search($event)" [(ngModel)]="query" name="query"></ion-searchbar>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" class="item-text-wrap" (click)="detail(item)">
+     <h2> {{item.trade_name}}</h2>
+     <p>{{item.name}}</p>
+    </button>
+  </ion-list>
+
+
+
 </ion-content>
