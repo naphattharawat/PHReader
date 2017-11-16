@@ -1,9 +1,8 @@
-import { DetailMapPage } from './../detail-map/detail-map';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the DetailPage page.
+ * Generated class for the DetailMapPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-detail',
-  templateUrl: 'detail.html',
+  selector: 'page-detail-map',
+  templateUrl: 'detail-map.html',
 })
-export class DetailPage {
-  item:any;
+export class DetailMapPage {
+  item=[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-     this.item=this.navParams.data
+    this.item=this.navParams.data
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPage');
-  }
-  toDetailMap(item){
-    this.navCtrl.push(DetailMapPage,item)
+    console.log('ionViewDidLoad DetailMapPage');
   }
 
 }

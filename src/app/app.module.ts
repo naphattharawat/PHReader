@@ -1,3 +1,4 @@
+import { DetailMapPage } from './../pages/detail-map/detail-map';
 import { DetailPage } from './../pages/detail/detail';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,8 @@ import { HttpModule } from '@angular/http';
   declarations: [
     MyApp,
     HomePage,
-    DetailPage
+    DetailPage,
+    DetailMapPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { HttpModule } from '@angular/http';
   entryComponents: [
     MyApp,
     HomePage,
-    DetailPage
+    DetailPage,
+    DetailMapPage
   ],
   providers: [
     StatusBar,

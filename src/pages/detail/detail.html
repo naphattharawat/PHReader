@@ -13,13 +13,46 @@
 </ion-header>
 
 
-<ion-content >
+<!-- <ion-content  >
 
-  <ion-content>
+  <ion-content >
     <ion-item-group>
-      <ion-item-divider color="light">{{item.trade_name}}</ion-item-divider>
+      <ion-item-divider color="light">{{item.trade_name}}[{{item.gtin_id}}]</ion-item-divider>
       <ion-item no-lines> {{item.name}}</ion-item>
-      <ion-item>Argentina</ion-item>
+      <ion-item>{{item.nlem_name}}</ion-item>
     </ion-item-group>
   </ion-content>
-</ion-content>
+</ion-content> -->
+
+
+
+<ion-content style="background-color:#acaaaa;">
+  
+      <ion-card>
+          <ion-item-group>
+        <ion-item>
+          <img src="../../assets/imgs/m.png" alt="" style="width: 120px;">
+        </ion-item>
+        <ion-item>
+          <h2>{{item.trade_name}}</h2>
+          <p>{{item.gtin_id}}</p>
+        </ion-item>
+        <ion-item>
+          <p>{{item.nlem_name}}</p>
+          <p>{{item.name}}</p>
+        </ion-item>
+      </ion-item-group>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+            <button ion-item (click)="toDetailMap(item)">ข้อมูลการ mapping</button>
+          <!-- <button ion-item >DC24</button>
+          <button ion-item >123</button>
+          <button ion-item >123</button>
+          <button ion-item >123</button>
+          <button ion-item >123</button>
+          <button ion-item >123</button> -->
+        </ion-card-content>
+      </ion-card>
+ 
+  </ion-content>

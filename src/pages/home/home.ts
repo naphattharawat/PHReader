@@ -8,7 +8,10 @@ import { LoadingController } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+
+
+
+export class HomePage { 
   items=[];
   query='';
   constructor(private loadingCtrl:LoadingController,public navCtrl: NavController,private barcodeScanner:BarcodeScanner,private searchProvider:SearchProvider) {
@@ -39,16 +42,23 @@ export class HomePage {
   }
   
   async search(event:any){
-    let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-    });
-    loader.present();
-    
-    let rs=await this.searchProvider.searchGtin(event.target.value)
-    this.items=rs.results;
-    loader.dismiss();
+    let value=event.target.value || '';
+    if(value.length>=4)
+    {
+      // let loader = this.loadingCtrl.create({
+      //   content: "Please wait...",
+      // });
+      // loader.present();
+      
+      let rs=await this.searchProvider.searchGtin(value)
+      this.items=rs.results;
+      // loader.dismiss();
+    }
+    else this.items=[];
   }
+
   detail(item:any){
     this.navCtrl.push(DetailPage,item)
   }
+  
 }
