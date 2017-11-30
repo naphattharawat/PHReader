@@ -45,14 +45,14 @@ export class HomePage {
     let value=event.target.value || '';
     if(value.length>=4)
     {
-      // let loader = this.loadingCtrl.create({
-      //   content: "Please wait...",
-      // });
-      // loader.present();
+      let loader = this.loadingCtrl.create({
+        content: "Please wait...",
+      });
+      loader.present();
       
       let rs=await this.searchProvider.searchGtin(value)
       this.items=rs.results;
-      // loader.dismiss();
+      loader.dismiss();
     }
     else this.items=[];
   }

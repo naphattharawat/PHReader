@@ -9,13 +9,20 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class SearchProvider {
-
+  APIURL :string ="http://10.157.136.179:3001/search/";
+  // APIURL :any ="http://api.mmis.moph.go.th/nmpcd/search/";
+  
   constructor(public http: Http) {
     console.log('Hello SearchProvider Provider');
   }
   async searchGtin(gtin: any) {
-    let resp: any = await this.http.get('http://172.17.2.113:3001/search/gtin?q=' + gtin).toPromise();
+    let resp: any = await this.http.get(this.APIURL+'gtin?q=' + gtin).toPromise();
     return resp.json();
   }
+  // async searchGtinName(gtin: any) {
+  //   let resp: any = await this.http.get(this.APIURL+'gtin/name?q=' + gtin).toPromise();
+  //   return resp.json();
+  // }
+
 
 }

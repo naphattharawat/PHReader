@@ -1,3 +1,4 @@
+import { TpuPage } from './../pages/tpu/tpu';
 import { DetailMapPage } from './../pages/detail-map/detail-map';
 import { DetailPage } from './../pages/detail/detail';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -16,7 +17,8 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     DetailPage,
-    DetailMapPage
+    DetailMapPage,
+    TpuPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     DetailPage,
-    DetailMapPage
+    DetailMapPage,
+    TpuPage
   ],
   providers: [
     StatusBar,

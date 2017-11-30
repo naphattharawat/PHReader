@@ -1,9 +1,8 @@
-import { TpuPage } from './../tpu/tpu';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the DetailMapPage page.
+ * Generated class for the TpuPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-detail-map',
-  templateUrl: 'detail-map.html',
+  selector: 'page-tpu',
+  templateUrl: 'tpu.html',
 })
-export class DetailMapPage {
-  item:any;
+export class TpuPage {
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.item=this.navParams.data
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailMapPage');
+    console.log('ionViewDidLoad TpuPage');
   }
-  clickTPU(item){
-    this.navCtrl.push(TpuPage,item)
-  }
+
 }
